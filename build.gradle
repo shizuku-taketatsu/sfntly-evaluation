@@ -32,10 +32,11 @@ repositories {
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.1:indy'
+    compile files('libs/sfntly.jar')
 }
 
 task run (dependsOn: 'classes', type: JavaExec) {
-    main = 'MainClass'
+    main = 'Runner'
     classpath = sourceSets.main.runtimeClasspath
 }
 
