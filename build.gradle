@@ -32,7 +32,9 @@ repositories {
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.1:indy'
-    compile files('libs/sfntly.jar')
+    compile files('libs/icu4j-55_1.jar')
+    compile files('libs/sfntly.jar', )
+    compile files('libs/icu4j-charset-55_1.jar')
 }
 
 task run (dependsOn: 'classes', type: JavaExec) {
