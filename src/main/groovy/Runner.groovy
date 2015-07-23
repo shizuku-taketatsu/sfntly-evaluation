@@ -23,6 +23,16 @@ class Runner
             printf("Units per EM: %d\n", table.unitsPerEm())
         }
 
+        if (f.hasTable(Tag.hhea))
+        {
+            println "Has horizontal header table"
+        }
+
+        if (f.hasTable(Tag.kern))
+        {
+            println "Has kerning"
+        }
+
         if (f.hasTable(Tag.name))
         {
             println "Has name table"
@@ -40,21 +50,11 @@ class Runner
                 printf("  Encoding ID: %d\n", it.encodingId())
             }
         }
-
-        if (f.hasTable(Tag.hhea))
-        {
-            println "Has horizontal header table"
-        }
-
-        if (f.hasTable(Tag.kern))
-        {
-            println "Has kerning"
-        }
     }
 
     static void main(String[] args)
     {
-        final String defaultFontPath = "/usr/share/fonts/truetype/DroidSansEthiopic-Regular.ttf";
+        final String defaultFontPath = "/usr/share/fonts/truetype/DejaVuSerif.ttf";
         String fontPath = defaultFontPath
 
         if (args.length > 1)
